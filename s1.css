@@ -54,12 +54,13 @@ nav .menu{
   color: black;
 }
 .img{
-  background: url('https://media.istockphoto.com/photos/the-latest-business-reports-are-in-picture-id960164282?b=1&k=20&m=960164282&s=170667a&w=0&h=vdlvESPUlLU-owSb7HwEh6IHj2PH_JQko0mtXyFQXXA=')no-repeat;
+  background: url('https://deviniti.com/support/server/testflo-87/latest/reporting-dashboards/filter-results-tct-smoke.png')no-repeat;
   width: 100%;
   height: 100vh;
-  background-size: cover;
+  background-size: 50%;
   background-position: center;
   position: relative;
+  right: 30px;
 }
 .img::before{
   content: '';
