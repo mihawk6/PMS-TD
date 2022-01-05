@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pms:schema xmlns:pms="http://www.w3.org/2001/XMLSchema">
+<pms:element name="Testing">
+<pms:complexType>
+<pms:sequence>
+<pms:element name="Employee" maxOccurs="unbounded">
+<pms:complexType>
+<pms:sequence>
+<pms:element name="Name" type="pms:string"></pms:element>
+<pms:element name="Emp_Id" type="pms:integer"></pms:element>
+<pms:element name="Address" type="pms:string"></pms:element>
+<pms:element name="Testing_cycle" type="Tcycle"></pms:element>
+</pms:sequence>
+</pms:complexType>
+</pms:element>
+</pms:sequence>
+</pms:complexType>
+</pms:element>
+<pms:simpleType name="Tcycle">
+<pms:restriction base="pms:integer">
+<pms:minInclusive value="1"></pms:minInclusive>
+<pms:maxInclusive value="4"></pms:maxInclusive>
+</pms:restriction>
+</pms:simpleType>
+</pms:schema>
+
+
