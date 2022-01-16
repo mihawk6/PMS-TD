@@ -86,7 +86,7 @@
         function deleteR(i)
         {
             y = xmlDoc.getElementsByTagName("Test")[i]
-            var name = y.getElementsByTagName("Emp_AGE")[0].childNodes[0].nodeValue
+            var name = y.getElementsByTagName("Emp_NAME")[0].childNodes[0].nodeValue
             var reply = confirm("Do you want to delete record? \nName: " + name)
             if(reply == true)
             {
