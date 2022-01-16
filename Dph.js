@@ -1,6 +1,6 @@
 
   var xmlDoc
-     var xmlFile = "C:\Users\91911\workspace\DomParser\DP1.xml"
+     var xmlFile = "DP1.xml"
 
         function loadXMLDoc() 
         {
