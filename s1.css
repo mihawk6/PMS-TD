@@ -109,4 +109,10 @@ nav .menu{
   background: white;
   color: black;
 }
-
+#table {
+  border: 1;
+  padding: 5%;
+  margin: auto;
+  background: black;
+  
+}
