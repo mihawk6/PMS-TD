@@ -30,7 +30,7 @@
          {
             var i;
             var table =
-                `<tr><th>ID</th><th>NAME</th>
+                `<tr><th>NAME</th>
                     <th>AGE</th><th>SALARY</th>
                     <th>EMAILID</th><th>MobNum</th><th>DESIGNATION</th
                 </tr>`
