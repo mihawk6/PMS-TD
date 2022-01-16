@@ -110,7 +110,8 @@ nav .menu{
   color: white;
 }
 #table {
-  border: 1;
+   border: 1px solid black;
+  border-collapse: collapse;
   padding: 5%;
   margin: auto;
   background: skyblue;
