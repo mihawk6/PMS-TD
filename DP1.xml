@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="DP3.xsd">
+
+   
+    <Test ID="001">
+    <Emp_NAME>Ankur</Emp_NAME>
+    <Emp_AGE>22</Emp_AGE>
+    <Emp_SALARY>50000.0</Emp_SALARY>
+    <Emp_EMAILID>ankurs12@gmail.com</Emp_EMAILID>
+    <Emp_MobNum>9113894701</Emp_MobNum>
+    <Emp_Designation>Associate Analyst</Emp_Designation>
+  </Test>
+ 
+   <Test ID="002">
+    <Emp_NAME>Amber</Emp_NAME>
+    <Emp_AGE>21</Emp_AGE>
+    <Emp_SALARY>65000.0</Emp_SALARY>
+    <Emp_EMAILID>amber16@gmail.com</Emp_EMAILID>
+    <Emp_MobNum>9123541701</Emp_MobNum>
+    <Emp_Designation>Operations Associate</Emp_Designation>
+  </Test>
+  
+    <Test ID="003">
+    <Emp_NAME>Ashwin</Emp_NAME>
+    <Emp_AGE>50</Emp_AGE>
+    <Emp_SALARY>50000.0</Emp_SALARY>
+    <Emp_EMAILID>ashwink17@gmail.com</Emp_EMAILID>
+    <Emp_MobNum>9113865201</Emp_MobNum>
+    <Emp_Designation>Associate Security Analyst</Emp_Designation>
+  </Test>
+   <Test ID="004">
+    <Emp_NAME>Anush</Emp_NAME>
+    <Emp_AGE>60</Emp_AGE>
+    <Emp_SALARY>60000.0</Emp_SALARY>
+    <Emp_EMAILID>anush16@gmail.com</Emp_EMAILID>
+    <Emp_MobNum>9538120435</Emp_MobNum>
+    <Emp_Designation>Associate analyst</Emp_Designation>
+  </Test>
+  </pms>

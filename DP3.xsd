@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pms:schema xmlns:pms="http://www.w3.org/2001/XMLSchema">
+<pms:element name="pms" type="DPT" />
+<pms:complexType name="DPT">
+<pms:sequence>
+   <pms:element name="Test" type="Tst" maxOccurs="unbounded" />
+  
+ </pms:sequence>
+</pms:complexType>
+<pms:complexType name="Tst">
+<pms:sequence>
+         <pms:element name="Emp_NAME" type="pms:string" />
+         <pms:element name="Emp_AGE" type="myage" />
+         <pms:element name="Emp_SALARY" type="pms:float" />
+         <pms:element name="Emp_EMAILID" type="pms:string" />
+         <pms:element name="Emp_MobNum" type="mob" />
+         <pms:element name="Emp_Designation" type="pms:string"/>
+        
+</pms:sequence>
+          <pms:attribute name="ID" type="pms:integer"></pms:attribute>
+</pms:complexType>
+
+<pms:simpleType name="myage">
+<pms:restriction base="pms:integer">
+ <pms:minInclusive value="18" ></pms:minInclusive>
+ <pms:maxExclusive value="85" ></pms:maxExclusive>
+</pms:restriction> 
+</pms:simpleType>
+ <pms:simpleType name="mob">
+        <pms:restriction base="pms:string">
+        <pms:length value="10"></pms:length>
+        <pms:pattern value="[0-9]+"></pms:pattern>
+        </pms:restriction>
+    </pms:simpleType>
+</pms:schema>
