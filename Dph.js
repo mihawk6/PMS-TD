@@ -53,8 +53,7 @@
                     .childNodes[0].nodeValue + "</td><td>"+
                     x[i].getElementsByTagName("Emp_Designation")[0]
                     .childNodes[0].nodeValue + "</td>"+
-                    "<td><span class='material-icons' onclick='editRecord(" +i+ ")'>edit</span></td>" +
-            "<td><span class='material-icons' onclick='deleteRecord(" +i+ ")'>delete</span></td></tr>";
+            "<td><span class='material-icons' onclick='deleteR(" +i+ ")'>delete</span></td></tr>";
             }
   
             document.getElementById("table").innerHTML = table;
