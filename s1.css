@@ -107,12 +107,12 @@ nav .menu{
 }
 .center .btns button:last-child{
   background: white;
-  color: black;
+  color: white;
 }
 #table {
   border: 1;
   padding: 5%;
   margin: auto;
-  background: black;
-  
+  background: skyblue;
+
 }
