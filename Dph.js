@@ -57,7 +57,7 @@
             "<td><span class='material-icons' onclick='deleteRecord(" +i+ ")'>delete</span></td></tr>";
             }
   
-            Test.getElementById("table").innerHTML = table;
+            document.getElementById("table").innerHTML = table;
         }
 
         function addNewRecord()
