@@ -35,7 +35,7 @@
                     <th>EMAILID</th><th>MobNum</th><th>DESIGNATION</th
                 </tr>`
                 
-            var x = xmlDoc.getElementsByTagName("pms");
+            var x = xmlDoc.getElementsByTagName("Test");
             
   
             // Start to fetch the data by using TagName 
@@ -57,15 +57,15 @@
             "<td><span class='material-icons' onclick='deleteRecord(" +i+ ")'>delete</span></td></tr>";
             }
   
-            pms.getElementById("table").innerHTML = table;
+            Test.getElementById("table").innerHTML = table;
         }
 
         function addNewRecord()
         {
             var i
-            var doc = []
-            var x = pms.getElementById("addRecordForm")
-            pms = xmlDoc.createElement("pms")
+            var Emp = []
+            var x = Test.getElementById("addRecordForm")
+            Test = xmlDoc.createElement("Test")
            
             Emp[0] = xmlDoc.createElement("Emp_NAME")
             Emp[1] = xmlDoc.createElement("Emp_AGE")
@@ -76,17 +76,17 @@
         
             for(i = 0; i < 6; i++)
             {
-                doc[i].appendChild(xmlDoc.createTextNode(x.elements[i].value))
-                pms.appendChild(Emp[i])
+                Emp[i].appendChild(xmlDoc.createTextNode(x.elements[i].value))
+                Test.appendChild(Emp[i])
             }
-            xmlDoc.documentElement.appendChild(pms);
+            xmlDoc.documentElement.appendChild(Test);
             console.log("Record added: " + x.elements[0].value)
             empDetails()
         }
 
         function deleteR(i)
         {
-            y = xmlDoc.getElementsByTagName("pms")[i]
+            y = xmlDoc.getElementsByTagName("Test")[i]
             var name = y.getElementsByTagName("Emp_AGE")[0].childNodes[0].nodeValue
             var reply = confirm("Do you want to delete record? \nName: " + name)
             if(reply == true)
