@@ -41,8 +41,6 @@
             // Start to fetch the data by using TagName 
             for (i = 0; i < x.length; i++) {
                 table += "<tr><td>" +
-                    x[i].getElementsByTagName("ID")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("Emp_NAME")[0]
                     .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("Emp_AGE")[0]
@@ -68,15 +66,15 @@
             var doc = []
             var x = pms.getElementById("addRecordForm")
             pms = xmlDoc.createElement("pms")
-            Emp[0] = xmlDoc.createElement("ID")
-            Emp[1] = xmlDoc.createElement("Emp_NAME")
-            Emp[2] = xmlDoc.createElement("Emp_AGE")
-            Emp[3] = xmlDoc.createElement("Emp_SALARY")
-            Emp[4] = xmlDoc.createElement("Emp_EMAILID")
-            Emp[5] = xmlDoc.createElement("Emp_MobNum")
-            Emp[6] = xmlDoc.createElement("Emp_Designation")
+           
+            Emp[0] = xmlDoc.createElement("Emp_NAME")
+            Emp[1] = xmlDoc.createElement("Emp_AGE")
+            Emp[2] = xmlDoc.createElement("Emp_SALARY")
+            Emp[3] = xmlDoc.createElement("Emp_EMAILID")
+            Emp[4] = xmlDoc.createElement("Emp_MobNum")
+            Emp[5] = xmlDoc.createElement("Emp_Designation")
         
-            for(i = 0; i < 7; i++)
+            for(i = 0; i < 6; i++)
             {
                 doc[i].appendChild(xmlDoc.createTextNode(x.elements[i].value))
                 pms.appendChild(Emp[i])
