@@ -59,7 +59,7 @@
             "<td><span class='material-icons' onclick='deleteRecord(" +i+ ")'>delete</span></td></tr>";
             }
   
-            pms.getElementById("id").innerHTML = table;
+            pms.getElementById("table").innerHTML = table;
         }
 
         function addNewRecord()
