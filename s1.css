@@ -112,6 +112,7 @@ nav .menu{
 #table,th,td {
   padding: 10%;
   margin: 2% 7%;
+  width: 70%;
   background: skyblue;
 
 }
