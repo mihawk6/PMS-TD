@@ -55,7 +55,8 @@
                     .childNodes[0].nodeValue + "</td>"+
 
 
-            "<td><span class='material-icons clickable - delete' onclick='deleteR(" +i+ ")'>delete</span></td></tr>";
+            "<td><span class='material-icons clickable - delete' onclick='deleteR(" + i + ")'>delete</span>+               
+            "<td><span class='material-icons clickable - icon edit' onClick='showEditPopup(" + i + ")'>edit</span></td></tr>";
             }
   
             document.getElementById("table").innerHTML = table;
