@@ -53,17 +53,19 @@
                     .childNodes[0].nodeValue + "</td><td>"+
                     x[i].getElementsByTagName("Emp_Designation")[0]
                     .childNodes[0].nodeValue + "</td>"+
-            "<td><span class='material-icons' onclick='deleteR(" +i+ ")'>delete</span></td></tr>";
+
+
+            "<td><span class='material-icons clickable - delete' onclick='deleteR(" +i+ ")'>delete</span></td></tr>";
             }
   
             document.getElementById("table").innerHTML = table;
         }
 
-        function addNewRecord()
+        function form()
         {
             var i
             var Emp = []
-            var x = Test.getElementById("addRecordForm")
+            var x = Test.getElementById("form")
             Test = xmlDoc.createElement("Test")
            
             Emp[0] = xmlDoc.createElement("Emp_NAME")
@@ -87,7 +89,7 @@
         {
             y = xmlDoc.getElementsByTagName("Test")[i]
             var name = y.getElementsByTagName("Emp_NAME")[0].childNodes[0].nodeValue
-            var reply = confirm("Do you want to delete record? \nName: " + name)
+            var reply = confirm("Do you want to delete this record? \nName: " + name)
             if(reply == true)
             {
                 xmlDoc.documentElement.removeChild(y)
@@ -99,13 +101,13 @@
 
         function open()
         {
-            document.getElementById("addRecordForm").style.display = "block"
+            document.getElementById("form").style.display = "block"
         }
         
 
         function close()
         {
-            document.getElementById("addRecordForm").style.display = "none"
+            document.getElementById("form").style.display = "none"
         }
         
   
