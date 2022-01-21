@@ -83,7 +83,13 @@ nav .menu{
 .center .btns{
   margin-top: 20px;
 }
-.center .btns button{
+.CRUD{
+    text-align: right;
+     padding-right: 21%;
+   }
+
+.center .btns button
+{
   height: 55px;
   width: 170px;
   border-radius: 5px;
@@ -116,3 +122,11 @@ nav .menu{
   background: skyblue;
 
 }
+#Form{
+      padding: 2% 5%;
+      border: 1px solid #000000;
+      background-color: #e3e3e3;
+      position: absolute;
+      top:2%;
+      left:28%;
+      display: none;
