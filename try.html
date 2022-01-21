@@ -21,41 +21,45 @@
         <li><a href="#">Feedback</a></li>
     </div>
   </nav>
-
-   <!-- <form id="form" class="form">
-    <div class="form-control">
-      <label for="username">name</label>
-      <input type="text" placeholder="Enter name" id="Emp_NAME" />
-      
-    </div>
-    <div class="form-control">
-      <label for="username">Age</label>
-      <input type="email" placeholder="Enter Age" id="Emp_AGE" />
- 
-    </div>
-    <div class="form-control">
-      <label for="username">Salary</label>
-      <input type="password" placeholder="Enter salary" id="Emp_SALARY"/>
-  
-    </div>
-    <div class="form-control">
-      <label for="username">Email</label>
-      <input type="password" placeholder="Enter email Address" id="Emp_EMAILID"/>
-  
-    </div>
-    <div class="form-control">
-      <label for="username">Phonenum</label>
-      <input type="password" placeholder="Enter Phonenum" id="Emp_MobNum"/>
-  
-    </div>
-    <div class="form-control">
-      <label for="username">Designation</label>
-      <input type="password" placeholder="Enter Designation" id="Emp_Designation"/>
-  
-    </div>
-    <input type="button" value="Add" id="add" class="btn btn-primary" onclick="form()">
-  </form>
-</div> -->
+                            
+  <div class="CRUD">
+                        <button id="openForm" name="openForm" onclick="open()">Add</button>
+                    </div>
+                    
+                    <table id="table"></table>
+                    
+                    <!--Form for record input-->
+                    <form id='form' class="col-sm-5">
+                        <h2>Enter New Record</h2>
+                        <div class="mb-3 mt-3">
+                            <label class="form-label">Emp_NAME</label>
+                            <input type='text' name='Emp_NAME' id='Emp_NAME' class="form-control" placeholder="Enter Emp_NAME..">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label>Emp_AGE</label>
+                            <input type='text' name='Emp_AGE' id='Emp_AGE' class="form-control" placeholder="Enter Emp_AGE..">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label>Emp_SALARY</label>
+                            <input type='text' name='Emp_SALARY' id='Emp_SALARY' class="form-control" placeholder="Enter Emp_SALARY..">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label>Emp_EMAILID</label>
+                            <input type='text' name='Emp_EMAILID' id='Emp_EMAILID' class="form-control" placeholder="Enter Emp_EMAILID..">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label>Emp_MobNum</label>
+                            <input type='text' name='Emp_MobNum' id='Emp_MobNum' class="form-control" placeholder="Enter Emp_MobNum..">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label>Emp_Designation</label>
+                            <input type='text' name='Emp_Designation' id='Emp_Designation' class="form-control" placeholder="Enter Emp_Designation..">
+                        </div>
+                        
+                        
+                        <input type="button" value="Add" id="add" class="btn btn-primary" onclick="form()">
+                        <input type="button" value="Close" id="close" class="btn btn-primary" onclick="close()">
+                    </form>
   <div class="title"><b><U></U></b></div>
     
 
