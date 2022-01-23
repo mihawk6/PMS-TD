@@ -5,16 +5,14 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
-::selection{
-  color: #000;
-  background: #fff;
-}
+
+
 nav{
   position: fixed;
   background: #fff; 
   width: 100%;
-  padding: 10px 0;
-  z-index: 12;
+  padding: 0 10px 0;
+  z-index: 2;
 }
 nav .menu{
   max-width: 1250px;
@@ -67,12 +65,12 @@ nav .menu{
   border: 3px solid green;
   padding: 10px;
 }
-.center .title{
+ .title{
   color: #1b1b1b;
   font-size: 55px;
   font-weight: 600;
 }
-.center .sub_title{
+.sub_title{
   color: #fff;
   font-size: 52px;
   font-weight: 600;
@@ -113,16 +111,16 @@ nav .menu{
   color: white;
 }
 #table,th,td {
-  padding: 10%;
+  padding:0 5%;
   margin: 2% 7%;
-  width: 70%;
+  width: 5%;
   background: lightgoldenrodyellow;
 
 }
-#Form{
-      padding: 2% 5%;
+ #Form{
+      padding: 2% 10%;
       border: 1px solid #000000;
-      background-color: skyblue;
+      background-color: rgba(235, 135, 135, 0.356);
       position: absolute;
       top:2%;
       left:28%;
