@@ -6,7 +6,8 @@
         {
             var xmlReq = new XMLHttpRequest();
             console.log(xmlReq.readyState)
-            xmlReq.onreadystatechange = function() {
+            xmlReq.onreadystatechange = function()
+             {
                 console.log(xmlReq.readyState)
 
                 // Request finished and response 
@@ -43,30 +44,50 @@
             for (i = 0; i < x.length; i++) 
             {
                 table += "<tr><td>" +
-                    x[i].getElementsByTagName("Emp_NAME")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("Emp_AGE")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("Emp_SALARY")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("Emp_EMAILID")[0]
-                    .childNodes[0].nodeValue + "</td><td>" +
-                    x[i].getElementsByTagName("Emp_MobNum")[0]
-                    .childNodes[0].nodeValue + "</td><td>"+
-                    x[i].getElementsByTagName("Emp_Designation")[0]
-                    .childNodes[0].nodeValue + "</td>"+
-
+                    x[i].getElementsByTagName("Emp_NAME")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Emp_AGE")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Emp_SALARY")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Emp_EMAILID")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Emp_MobNum")[0].childNodes[0].nodeValue + "</td><td>"+
+                    x[i].getElementsByTagName("Emp_Designation")[0].childNodes[0].nodeValue + "</td>"+
                     "<td><span class='material-icons' onclick='deleteR(" +i+ ")'>delete</span></td></tr>"
             }
   
             document.getElementById("table").innerHTML = table;
         }
 
-        function form()
+        function deleteR(i)
+        {
+            y = xmlDoc.getElementsByTagName("Test")[i]
+            var name = y.getElementsByTagName("Emp_NAME")[0].childNodes[0].nodeValue
+            var reply = confirm("Do you want to delete this record? \nName: " + name)
+            if(reply == true)
+            {
+                xmlDoc.documentElement.removeChild(y)
+                console.log("Record deleted: " + name)
+                empDetails()
+            }
+        }
+        
+
+        function openForm()
+        {
+            document.getElementById("addForm").style.display ="block"
+        }
+        
+
+        function closeForm()
+        {
+            document.getElementById("addForm").style.display = "none"
+        }
+        
+  
+  
+        function addForm()
         {
             var i
             var Emp = []
-            var x = Test.getElementById("form")
+            var x = document.getElementById("addForm")
             Test = xmlDoc.createElement("Test")
            
             Emp[0] = xmlDoc.createElement("Emp_NAME")
@@ -85,31 +106,3 @@
             console.log("Record added: " + x.elements[0].value)
             empDetails()
         }
-
-        function deleteR(i)
-        {
-            y = xmlDoc.getElementsByTagName("Test")[i]
-            var name = y.getElementsByTagName("Emp_NAME")[0].childNodes[0].nodeValue
-            var reply = confirm("Do you want to delete this record? \nName: " + name)
-            if(reply == true)
-            {
-                xmlDoc.documentElement.removeChild(y)
-                console.log("Record deleted: " + name)
-                empDetails()
-            }
-        }
-        
-
-        function open()
-        {
-            document.getElementById("form").style.display = "block"
-        }
-        
-
-        function close()
-        {
-            document.getElementById("form").style.display = "none"
-        }
-        
-  
-  

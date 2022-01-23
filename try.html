@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> PMS | Project Management System</title>
     <link rel="stylesheet" href="s1.css">
@@ -26,19 +27,22 @@
        <br>
        <br>    
        <br>                 
-                   <div class="add_form">
-                        <button id="open"  class="btn btn-primary" name="open" onclick="open()">Add</button>
-                    </div>
+                   
+            
                     <br>
-                    
+                    <br>
                     <table id="table"></table>
-                    
+                    <br>
+                    <div class="add_form">
+                      <button id="openForm"  class="btn btn-primary" name="openForm" onclick="openForm()">Add</button>
+                  </div>
+        
                     <!--Form for record input-->
-                  <br><br>  <form id='form' class="col-sm-5">
+                  <br><br>  <form id='addForm' class="col-sm-5">
                         <h3><U>Enter New Record</h3></U>
                         <div class="mb-3 mt-3">
                          <label class="form-label">Emp_NAME</label>
-                            <input type='text' name='Emp_NAME' id='Emp_NAME' class="form-control" placeholder="Enter Emp_NAME..">
+                            <input type='text' name='NAME' id='Emp_NAME' class="form-control" placeholder="Enter Emp_NAME..">
                         </div>
                         <div class="mb-3 mt-3">
                             <label>Emp_AGE</label>
@@ -62,8 +66,8 @@
                         </div>
                         
                         
-                        <input type="button" value="Add" id="add" class="btn btn-primary" onclick="form()">
-                        <input type="button" value="Close" id="close" class="btn btn-primary" onclick="close()">
+                        <input type="button" value="Add" id="form" class="btn btn-primary" onclick="addForm()">
+                        <input type="button" value="close" id="close" class="btn btn-primary" onclick="closeForm()">
                     </form>
   <div class="title"><b><U></U></b></div>
     

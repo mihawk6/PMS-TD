@@ -7,7 +7,8 @@
 }
 
 
-nav{
+nav
+{
   position: fixed;
   background: #fff; 
   width: 100%;
@@ -55,16 +56,11 @@ nav .menu{
 .img::before{
   content: '';
   position: absolute;
-  height: 80%;
-  width: 80%;
-  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.966);
 }
-.center {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
-}
+
  .title{
   color: #1b1b1b;
   font-size: 55px;
@@ -78,10 +74,7 @@ nav .menu{
 .center .btns{
   margin-top: 30px;
 }
-.CRUD{
-    text-align: right;
-     padding-right: 20%;
-   }
+
 
 .center .btns button
 {
@@ -123,7 +116,6 @@ nav .menu{
     padding-right: 20px;
 }
 form, th, td {
- 
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
