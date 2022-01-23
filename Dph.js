@@ -36,10 +36,12 @@
                 </tr>`
                 
             var x = xmlDoc.getElementsByTagName("Test");
+
             
   
             // Start to fetch the data by using TagName 
-            for (i = 0; i < x.length; i++) {
+            for (i = 0; i < x.length; i++) 
+            {
                 table += "<tr><td>" +
                     x[i].getElementsByTagName("Emp_NAME")[0]
                     .childNodes[0].nodeValue + "</td><td>" +
@@ -95,7 +97,7 @@
                 console.log("Record deleted: " + name)
                 empDetails()
             }
-        
+        }
         
 
         function open()
@@ -110,4 +112,4 @@
         }
         
   
-    }
+  
