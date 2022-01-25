@@ -109,9 +109,14 @@
 
         function validateForm()
          {
-            let x = document.forms["myForm"]["NAME"].value;
-            if (x == "") {
-              alert("Name must be filled out");
-              return false;
+            var name= document.getElementById("Emp_NAME").value;
+            const regex= /A1/;
+            if(regex.test(name))
+            {
+                alert("valid name");
+            }
+            else
+            {
+                alert("not valid"); 
             }
           }
