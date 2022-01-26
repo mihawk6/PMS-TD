@@ -26,52 +26,113 @@
   </nav><br><br> 
  
  <body>
-    <br><br><h2>Employee Details</h2>
-<form action="index.html" name="myForm" onsubmit="return validateForm()" method="post">
-    <div class = "formdesign" id="name">
-        NAME: <input type="text" name="NAME"><span class="formerror"><b> This is an Error!</b></span>
+    <br><br><h2>Employee Details with VENDOR choice</h2>
+<form action=" " onsubmit="return validateForm(event)">
+    <div class = "formdesign" >
+        NAME: <input id="name" type="text" onkeypress="return  lockkb(event)" placeholder="NAME"><b> <label id="fname" style="color: red; visibility: hidden;">Invalid User</label></b>
         </div>
-    <div class = "formdesign" id="Ename">
-        Email ID: <input type="Email" name="Eemail"><span class="formerror"><b> This is an Error!</b></span>
+    <div class = "formdesign" >
+        Email: <input id="Eemail" type="email" placeholder= " Email ID"><label id="Eid" style="color: red; visibility: hidden;">Email format = username@branch.christuniversity.in</label>
+         <br><br>
         </div>
-    <div class = "formdesign" id="Ename">
-        PhNum: <input type="phone" name="Ephone"><span class="formerror"><b> This is an Error!</b></span><br><br>
+    <div class = "formdesign" >
+       Phone: <input id="Ph" type="phone" onkeypress="return invalidphone(event)" placeholder=" PhNum" ><br><br>
         </div>
-    <div class = "formdesign" id="Ename">
-        Password: <input type="password" name="Epassword"><span class="formerror"><b> This is an Error!</b></span><br><br>
+    <div class = "formdesign">
+         PassWord: <input  id="passwd" type="text" placeholder="Password" ><label id="pass" style="color: red; visibility: hidden;">PassWord should contain minimum of 1 lower case letter [a-z],
+            1 upper case letter [A-Z] ,1 numeric character [0-9] and 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?
+            These character must be EMBEDDED somewhere in the middle lowercase letters.</label>
         </div>
-    <input class="but" type= "submit" value="Submit"></form>
+    <div class = "formdesign">
+      Vendor Name: <input  id="vn" type="text" placeholder=" VENDOR name" ><br><br>
+        </div>
+    <div class = "formdesign" >
+         Vendor ID: <input id="VID" type="integer" placeholder="VENDOR ID" ><label id="vid" style="color: red; visibility: hidden;">Priority should be between 0 and 4</label>
+         <br><br>
+        </div>        
+        <div class="but"><button type="submit">Submit</button></div>
+ </form>
 </body>
     <script>
 
-        function clearErrors(){
-
-            errors = document.getElementsByClassName('formerror');
-            for(let item of errors)
-            {
-                item.innerHTML = "";
-            }
-
-        }
-
-        function seterror(id,error)
+        function lockkb(event)
         {
-            element= document.getElementById(id);
-            element.getElementsByClassName("formerror")[0].innerHTML= error;
+            let code=event.which;
+            if(code>47 && code<58)
+                return false;
+            else
+                return true;
         }
-
+        function invalidphone(event)
+        {
+            let code=event.which;
+            if(code>64 && code<91)
+                return false;
+            else
+                return true;
+        }
         function validateForm()
         {
-            var returnval =true;
-            clearErrors();
+           var username=document.getElementById("name");
+           var password=document.getElementById("passwd");
+           const regpass=/^([a-z]+)([a-zA-Z0-9]+)+([a-zA-Z0-9~`!@#\$%\^&\*\(\)-_\+={}\[\]|\;:"<>,.\/?]+)([a-z]+)$/;
+    
+           var email=document.getElementById('Eemail');
+           const regemail=/([a-zA-Z0-9\.-]+)@([a-zA-Z]{0,4})\.christuniversity.in$/;
 
-            var name = document.forms["myForm"]["NAME"].value;
-            if (name.length<5)
+           var number=document.getElementById("Ph");
+            const regnum=/^[0-9]{10}$/;
+            
+           var VID=document.getElementById("VID");
+           var Vname=document.getElementById("vn");
+    
+           if(username.value.trim()=="")
+           {
+               alert("Blank Username");
+               username.style.border="solid 3px red";
+               document.getElementById("fname").style.visibility="visible";
+               return false;
+           }
+           else if(password.value.trim()=="")
+           {
+               alert("Blank Password");
+               return false;
+           }
+           else if(VID.value.trim()=="")
+           {
+               alert("Vendor id can't be Blank");
+               return false;
+           }
+           else if(password.value.trim().length<8)
+           {
+               alert("Password is too short");
+               return false;
+           }
+           else if(!regpass.test(password.value))
             {
-                seterror("name","length of name is too short");
-            returnval=false;
-        }
-       
+                alert("INVALID Password");
+                password.style.border="solid 3px red";
+                document.getElementById("pass").style.visibility="visible";
+                return false;
+            }
+            else if(!regemail.test(Eemail.value))
+            {
+                alert("Invalid Email ID");
+                Eemail.style.border="solid 3px red";
+                document.getElementById("Eemail").style.visibility="visible";
+                return false;            
+            }
+            
+    
+            else if(regnum.test(number.value))
+                {
+                    return true;  
+                }
+            else
+                {
+                    alert("Invalid Phone Number");
+                    return false;
+                }  
         }
     </script>
 
