@@ -75,7 +75,7 @@
         {
            var username=document.getElementById("name");
            var password=document.getElementById("passwd");
-           const regpass=/^([a-z]+)([a-zA-Z0-9]+)+([a-zA-Z0-9~`!@#\$%\^&\*\(\)-_\+={}\[\]|\;:"<>,.\/?]+)([a-z]+)$/;
+           const regpass=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     
            var email=document.getElementById('Eemail');
            const regemail=/([a-zA-Z0-9\.-]+)@([a-zA-Z]{0,4})\.christuniversity.in$/;
