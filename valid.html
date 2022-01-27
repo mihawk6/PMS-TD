@@ -26,6 +26,7 @@
   </nav><br><br> 
  
  <body>
+
     <br><br><h2>Employee Details with VENDOR choice</h2>
 <form action=" " onsubmit="return validateForm(event)">
     <div class = "formdesign" >
@@ -50,8 +51,20 @@
          Vendor ID: <input id="VID" type="integer" placeholder="VENDOR ID" ><label id="vid" style="color: red; visibility: hidden;">Priority should be between 0 and 4</label>
          <br><br>
         </div>        
-        <div class="but"><button type="submit">Submit</button></div>
+        <div><button class="but" type="submit">Submit</button></div>
  </form>
+<br><br>
+        <br><br>
+        <input class="but" type="button" value="Set Cookies" onclick="setCookie()">
+
+         <input class="but" type="button" value="Get Cookies" onclick="getCookie()">
+<br><br>
+    <select id="demo" class="c" onchange="show()">
+        <option value="Select Color">Select Color</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
 </body>
     <script>
 
@@ -134,6 +147,48 @@
                     return false;
                 }  
         }
+        //LOCAL SOTRAGE
+        localStorage.setItem("Name","ANKUR");
+        localStorage.setItem("UID","2147104");
+        //SESSION SOTRAGE
+        sessionStorage.setItem("UNIVERSITY","CHRIST UNIVERSITY");
+        sessionStorage.setItem("CAMPUS","CENTRAL");
+
+        function show()
+        {
+            var value=document.getElementById("demo").value;
+            if(value!="Select Color")
+            {
+                document.bgColor=value;
+                document.cookie="color="+value+";expires=Fri,2 Feb 2022 01:00:00 UTC;";
+            }
+        }
+        window.onload=function()
+        {
+            if(document.cookie.length!=0)
+            {
+                var a=document.cookie.split("=");
+                document.getElementById("demo").value=a[1];
+                document.bgColor=a[1];
+            }
+        }
+
+        function setCookie()
+       {
+           document.cookie="name=ADARSH";
+           document.cookie="ID=101";
+           document.cookie="TestID=001;expires="+new Date (2022,01,01).toUTCString();
+       }
+       function getCookie()
+       {
+           if(document.cookie.length!=0)
+           {
+               alert(document.cookie); 
+           }
+           else{
+               alert("No cookies");
+           }
+       }
     </script>
 
 </html>
