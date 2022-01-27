@@ -26,31 +26,36 @@
   </nav><br><br> 
  
  <body>
+    <div id="b">
+    <br><br><h2>Employee And Vendor Details</h2><br>
 
-    <br><br><h2>Employee Details with VENDOR choice</h2>
 <form action=" " onsubmit="return validateForm(event)">
     <div class = "formdesign" >
         NAME: <input id="name" type="text" onkeypress="return  lockkb(event)" placeholder="NAME"><b> <label id="fname" style="color: red; visibility: hidden;">Invalid User</label></b>
         </div>
     <div class = "formdesign" >
-        Email: <input id="Eemail" type="email" placeholder= " Email ID"><label id="Eid" style="color: red; visibility: hidden;">Email format = username@branch.christuniversity.in</label>
+        Email: <input id="Eemail" type="email" placeholder= " Email ID"><b><label id="Eid" style="color: red; visibility: hidden;">=> username@mca.christuniversity.in</label></b>
          <br><br>
         </div>
     <div class = "formdesign" >
        Phone: <input id="Ph" type="phone" onkeypress="return invalidphone(event)" placeholder=" PhNum" ><br><br>
         </div>
     <div class = "formdesign">
-         PassWord: <input  id="passwd" type="text" placeholder="Password" ><label id="pass" style="color: red; visibility: hidden;">PassWord should contain minimum of 1 lower case letter [a-z],
-            1 upper case letter [A-Z] ,1 numeric character [0-9] and 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?
-            These character must be EMBEDDED somewhere in the middle lowercase letters.</label>
+         PassWord: <input  id="passwd" type="text" placeholder="Password" ><label id="pass" style="color: red; visibility: hidden;"> Must contain minimum of 1 lower case letter,
+            1 upper case letter,1 number [0-9] and 1 special character: ~`!@#$%^&*()-_+={}[]|\;:"<>,./?
+    </label>
         </div>
     <div class = "formdesign">
-      Vendor Name: <input  id="vn" type="text" placeholder=" VENDOR name" ><br><br>
+      Vendor Name: <input  id="vn" type="text" onkeypress="return lockkb(event)" placeholder=" VENDOR name" ><b><label id="VN" style="color: red; visibility: hidden;">Vendor name must be in CAPS eg:MICROSOFT</label></b><br><br>
         </div>
     <div class = "formdesign" >
-         Vendor ID: <input id="VID" type="integer" placeholder="VENDOR ID" ><label id="vid" style="color: red; visibility: hidden;">Priority should be between 0 and 4</label>
+         Vendor ID: <input id="VID" type="integer" onkeypress="return lockalpha(event)" placeholder="VENDOR ID" ><b><label id="vid" style="color: red; visibility: hidden;">Vendor ID= 101=AWS,102=Azure,103=Cisco,104=Redhat,105=IBM,106=PMS,107=Ilp</label></b>
          <br><br>
         </div>        
+    <div class = "formdesign" >
+         Test ID: <input id="TID" type="integer" onkeypress="return lockalpha(event)" placeholder="Test ID" ><b><label id="tid" style="color: red; visibility: hidden;">Test ID= 1101=AWS,1102=Azure,1103=Cisco,1104=Redhat,1105=IBM,1106=PMS,1107=Ilp</label></b>
+            <br><br>
+           </div>    
         <div><button class="but" type="submit">Submit</button></div>
  </form>
 <br><br>
@@ -58,13 +63,10 @@
         <input class="but" type="button" value="Set Cookies" onclick="setCookie()">
 
          <input class="but" type="button" value="Get Cookies" onclick="getCookie()">
+         <input class="but" type="button" value="Set Color" onclick="setColor()"/><br><br>
+    
 <br><br>
-    <select id="demo" class="c" onchange="show()">
-        <option value="Select Color">Select Color</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-    </select>
+</div>
 </body>
     <script>
 
@@ -84,6 +86,14 @@
             else
                 return true;
         }
+        function lockalpha(event)
+        {
+            let code=event.which;
+            if(code>65 && code<123)
+                return false;
+            else
+                return true;
+        }
         function validateForm()
         {
            var username=document.getElementById("name");
@@ -97,7 +107,8 @@
             const regnum=/^[0-9]{10}$/;
             
            var VID=document.getElementById("VID");
-           var Vname=document.getElementById("vn");
+           var vn=document.getElementById("vn");
+            const regname=/^[A-Z]*$/;
     
            if(username.value.trim()=="")
            {
@@ -116,6 +127,11 @@
                alert("Vendor id can't be Blank");
                return false;
            }
+           else if(vn.value.trim()=="")
+           {
+               alert("Vendor name can't be Blank");
+               return false;
+           }
            else if(password.value.trim().length<8)
            {
                alert("Password is too short");
@@ -132,11 +148,30 @@
             {
                 alert("Invalid Email ID");
                 Eemail.style.border="solid 3px red";
-                document.getElementById("Eemail").style.visibility="visible";
-                return false;            
+                document.getElementById("Eid").style.visibility="visible";
+                return false;    
+            }     
+            else if(!regname.test(vn.value))
+            {
+                alert("Vendor name must be in CAPS!");
+                vn.style.border="solid 3px red";
+                document.getElementById("VN").style.visibility="visible";
+                return false;           
             }
-            
-    
+            else if(VID.value<100 || VID.value>109)
+                {
+                    alert("Incorrect vendor Id");
+                    VID.style.border="solid 3px red";
+                    document.getElementById("vid").style.visibility="visible";
+                    return false;
+                }
+            else if(TID.value<1100 || TID.value>1108)
+                {
+                        alert("Incorrect Test Id");
+                        TID.style.border="solid 3px red";
+                        document.getElementById("tid").style.visibility="visible";
+                        return false;
+                }
             else if(regnum.test(number.value))
                 {
                     return true;  
@@ -154,22 +189,23 @@
         sessionStorage.setItem("UNIVERSITY","CHRIST UNIVERSITY");
         sessionStorage.setItem("CAMPUS","CENTRAL");
 
-        function show()
+        function setColor()
         {
-            var value=document.getElementById("demo").value;
-            if(value!="Select Color")
-            {
-                document.bgColor=value;
-                document.cookie="color="+value+";expires=Fri,2 Feb 2022 01:00:00 UTC;";
-            }
+            var value="#bce6e3";
+    
+            document.getElementById("b").style.backgroundColor=value;
+            document.cookie="color="+value+";expires=Mon,16 March 2022 06:30:15 UTC;";
         }
+    
+        
         window.onload=function()
         {
             if(document.cookie.length!=0)
             {
+
                 var a=document.cookie.split("=");
-                document.getElementById("demo").value=a[1];
-                document.bgColor=a[1];
+                document.getElementById("b").style.backgroundColor=color;
+                document.style.backgroundColor=a[0];
             }
         }
 
@@ -177,7 +213,7 @@
        {
            document.cookie="name=ADARSH";
            document.cookie="ID=101";
-           document.cookie="TestID=001;expires="+new Date (2022,01,01).toUTCString();
+           document.cookie="TestID=001;expires="+new Date (2022,01,07).toUTCString();
        }
        function getCookie()
        {
