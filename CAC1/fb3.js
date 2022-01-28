@@ -37,13 +37,7 @@ function checkInputs() {
 		setSuccessFor(password);
 	}
 	
-	if(password2Value === '') {
-		setErrorFor(password2, 'Password2 cannot be blank');
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Passwords does not match');
-	} else{
-		setSuccessFor(password2);
-	}
+	
 }
 function lockkb(event)
 {
