@@ -6,7 +6,7 @@
 }
 
 body {
-	background-color: #9b59b6;
+	background-color: #240f55;
 	font-family: 'Open Sans', sans-serif;
 	box-shadow: 0 16px 22px -17px #03153B;
 	display: flex;
@@ -106,8 +106,8 @@ body {
 }
 
 .form button {
-	background-color: #8e44ad;
-	border: 2px solid #8e44ad;
+	background-color: #240f55;
+	border: 2px solid #240f55;
 	border-radius: 4px;
 	color: #fff;
 	box-shadow: 0 16px 22px -17px #03153B;
@@ -228,7 +228,7 @@ body {
 
 .floating-btn {
 	border-radius: 26.5px;
-	background-color: #001F61;
+	background-color: #a30303;
 	border: 1px solid #001F61;
 	box-shadow: 0 16px 22px -17px #03153B;
 	color: #fff;
@@ -244,7 +244,7 @@ body {
 
 .floating-btn:hover {
 	background-color: #ffffff;
-	color: #001F61;
+	color: #01010a;
 }
 
 .floating-btn:focus {
@@ -252,7 +252,7 @@ body {
 }
 
 .floating-text {
-	background-color: #001F61;
+	background-color: #be0e0e;
 	border-radius: 10px 10px 0 0;
 	color: #fff;
 	font-family: 'Muli';

@@ -53,6 +53,13 @@ function lockkb(event)
 	else
 		return true;
 }
+const reloadtButton = document.querySelector("#reload");
+// Reload everything:
+function reload() {
+    reload = location.reload();
+}
+// Event listeners for reload
+reloadButton.addEventListener("click", reload, false);
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -67,7 +74,7 @@ function setSuccessFor(input) {
 }
 	
 function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+	return /([a-zA-Z0-9\.-]+)@([a-zA-Z]{0,4})\.christuniversity.in$/.test(email);
 }
 
 
