@@ -64,6 +64,8 @@
 
          <input class="but" type="button" value="Get Cookies" onclick="getCookie()">
          <input class="but" type="button" value="Set Color" onclick="setColor()"/><br><br>
+         <input class="but" type="button" value="Remove Cookies" onclick="RemoveCookies()"/>
+
     
 <br><br>
 </div>
@@ -205,6 +207,8 @@
             {
 
                 var a=document.cookie.split("=");
+                color=(a[1].split(";"))[0];
+                console.log(a);
                 document.getElementById("b").style.backgroundColor=color;
                 document.style.backgroundColor=a[0];
             }
@@ -226,6 +230,16 @@
                alert("No cookies");
            }
        }
+       function RemoveCookies()
+    {
+        var res = document.cookie;
+        var multiple = res.split(";");
+        for(var i = 0; i < multiple.length; i++) 
+        {
+            var key = multiple[i].split("=");
+            document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+        }
+    }
     </script>
 
 </html>

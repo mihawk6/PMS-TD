@@ -36,6 +36,11 @@ function checkInputs() {
 	} else {
 		setSuccessFor(password);
 	}
+	if(password2Value === '') {
+		setErrorFor(password2, 'Address cannot be blank');
+	} else {
+		setSuccessFor(password2);
+	}
 	
 	
 }
