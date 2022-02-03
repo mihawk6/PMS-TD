@@ -28,7 +28,7 @@
  <body>
     <div id="b">
     <br><br><h2>Employee And Vendor Details</h2><br>
-
+    <img class="column" id="img" width="500px">
 <form action=" " onsubmit="return validateForm(event)">
     <div class = "formdesign" >
         NAME: <input id="name" type="text" onkeypress="return  lockkb(event)" placeholder="NAME"><b> <label id="fname" style="color: red; visibility: hidden;">Invalid User</label></b>
@@ -57,14 +57,17 @@
             <br><br>
            </div>    
         <div><button class="but" type="submit">Submit</button></div>
+      
  </form>
 <br><br>
         <br><br>
         <input class="but" type="button" value="Set Cookies" onclick="setCookie()">
 
          <input class="but" type="button" value="Get Cookies" onclick="getCookie()">
-         <input class="but" type="button" value="Set Color" onclick="setColor()"/><br><br>
+         <input class="but" type="button" value="Set Color" onclick="setColor()"/>
+         <input class="but"type="button" value="Set Image" onclick="set_img()"/><br><br>
          <input class="but" type="button" value="Remove Cookies" onclick="RemoveCookies()"/>
+
 
     
 <br><br>
@@ -186,7 +189,7 @@
                 }  
         }
         //LOCAL SOTRAGE
-        localStorage.setItem("Name","ANKUR");
+        localStorage.setItem("Name","Adarsh");
         localStorage.setItem("UID","2147104");
         //SESSION SOTRAGE
         sessionStorage.setItem("UNIVERSITY","CHRIST UNIVERSITY");
@@ -194,12 +197,21 @@
 
         function setColor()
         {
-            var value="#bce6e3";
+            var value="#8df7a2";
     
             document.getElementById("b").style.backgroundColor=value;
             document.cookie="color="+value+";expires=Mon,16 March 2022 06:30:15 UTC;";
         }
     
+        
+    function set_img()
+    {
+        var path="1.jpg";
+
+        document.getElementById("img").src=path;
+        document.cookie="img="+path+";expires=Mon,11 April 2022 06:30:15 UTC;";
+        console.log(document.cookie);
+    }
         
         window.onload=function()
         {
@@ -211,6 +223,7 @@
                 console.log(a);
                 document.getElementById("b").style.backgroundColor=color;
                 document.style.backgroundColor=a[0];
+                document.getElementById("img").src=i[2];
             }
         }
 
@@ -218,7 +231,7 @@
        {
            document.cookie="name=ADARSH";
            document.cookie="ID=101";
-           document.cookie="TestID=001;expires="+new Date (2022,01,07).toUTCString();
+           document.cookie="TestID=001;expires="+new Date (2022,02,07).toUTCString();
        }
        function getCookie()
        {
@@ -237,7 +250,7 @@
         for(var i = 0; i < multiple.length; i++) 
         {
             var key = multiple[i].split("=");
-            document.cookie = key[0]+" =; expires = Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = key[0]+" =; expires = Thu, 08 Jan 2022 00:00:00 UTC";
         }
     }
     </script>
