@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hms:schema xmlns:hms="http://www.w3.org/2001/XMLSchema">
+	<hms:element name="Christ">
+		<hms:complexType>
+			<hms:sequence>
+				<hms:element name="ComputerScience" maxOccurs="unbounded">
+					<hms:complexType>
+						<hms:sequence>
+						
+							<hms:element name="Student_name" type="hms:string"></hms:element>
+							<hms:element name="Student_university" type="hms:string"></hms:element>
+							<hms:element name="Student_phone" type="hms:integer"></hms:element>
+							<hms:element name="Student_email" type="hms:string"></hms:element>
+							
+						</hms:sequence>
+					</hms:complexType>
+				</hms:element>
+			</hms:sequence>		
+		</hms:complexType>
+	</hms:element>
+</hms:schema>

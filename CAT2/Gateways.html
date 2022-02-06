@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            display: block;
+            margin-left: 20px;
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>GATEWAYS</h1>
+        <h2><u>TECHNOVID REGISTRATIONS</u></h2>
+    </center>
+    <form action="#">
+        <label for="name">Name:<input type="text" id="name" name="name"
+            oninput=" this.value = this.value.replace(/[0-9]/g,'')"></label> <br><br>
+        <label for="email">Email:    <input type="email" id="email"
+            placeholder="enter your official email"><span></span></label> <br>
+        <label for="branch">Branch: <input type="text" id="branch"><br><br>
+        <label for="university">University:<input type="text" id="university"
+            placeholder="enter your university/college name"></label><br><br>
+        <label for="state">State:</label> <input type="text" id="state"><br><br>
+        <label for="address">Address: <input type="text" id="address"></label><br><br>
+        <label for="age">Age:  <input type="number" id="age"><span></span></label><br>
+        <label for="phone">Phone number:<input type="tel" id="phone"
+            oninput=" this.value = this.value.replace(/[a-z,A-Z]/g,'')"><span></span></label><br>
+        <label for="uname">Username:</label><input type="text" id="uname" style="text-transform:capitalize"><br><br>
+        <label for="pass">Password:</label><input type="password" id="pass"><span></span><br>
+        <input type="submit" value="Submit" onclick="empty()">
+        <input type="reset" value="Reset">
+    </form>
+    <script>
+
+        var email = document.getElementById('email');
+        var span = document.getElementsByTagName('span');
+
+        email.oninput = function () {
+            const regex1 = /^\w+([\.-]?\w+)+@(christuniversity.in|christuniversity.com)$/;
+            const regex2 = /^\w+([\.-]?\w+)+@(christuniversity.in|christuniversity.com)$/;
+            if (regex1.test(email.value) || regex2.test(email.value)) {
+                span[0].innerText = "Valid";
+                span[0].style.color = "lime";
+            }
+            else {
+                span[0].innerText = "Invalid Email Id";
+                span[0].style.color = "red";
+                return
+            }
+        }
+
+        var age = document.getElementById('age')
+        var span = document.getElementsByTagName('span');
+        age.oninput = function (){
+            if(age.value <= 0){
+                span[1].innerHTML = "Invalid";
+                span[1].style.color = "red";
+            }
+            else{
+                span[1].innerHTML = "Valid";
+                span[1].style.color = "lime";
+            }
+        }
+
+
+        var phone = document.getElementById('phone');
+        var phnumber = /[0-9]{10}/
+        var span = document.getElementsByTagName('span');
+        phone.oninput = function () {
+
+            if (!phnumber.test(phone.value)) {
+                span[2].innerText = "Invalid";
+                span[2].style.color = "red";
+            }
+            else {
+                span[2].innerText = "Valid";
+                span[2].style.color = "lime";
+            }
+
+        }
+
+        var pass = document.getElementById('pass')
+        var span = document.getElementsByTagName('span');
+        var psword = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
+        pass.oninput = function () {
+
+            if (!psword.test(pass.value)) {
+                span[3].innerHTML ="INVALID. Please include atleast 1 Uppercase Char, 1 Lowercase Char, 1 Number, 1 Special Character and minimum length should be 8 characters"
+                span[3].style.color = "red";
+                
+            }
+            else {
+                span[3].innerHTML = "Valid";
+                span[3].style.color = "lime";
+            }
+        }
+
+    
+        function empty() {
+            var name = document.getElementById('name')
+            var email = document.getElementById('email')
+            var branch = document.getElementById('branch')
+            var university = document.getElementById('university')
+            var state = document.getElementById('state')
+            var address = document.getElementById('address')
+            var age = document.getElementById('age')   
+            var phone = document.getElementById('phone')
+            var uname = document.getElementById('uname')
+            var pass = document.getElementById('pass')
+            
+
+
+            if (
+                !name.value ||
+                !email.value ||
+                !branch.value ||
+                !university.value ||
+                !state.value ||
+                !address.value ||
+                !age.value ||
+                !phone.value ||
+                !uname.value ||
+                !pass.value
+            ) {
+                alert("All Fields are mandatory\n")
+                return
+            }
+
+            var emailid = /^\w+([\.-]?\w+)+@(christuniversity.in|christuniversity.com)$/
+            if (!emailid.test(email.value)) {
+                alert("Invalid Email")
+                alert("Only official mail allowed")
+                return
+            }   
+
+            if(age.value<=0){
+                alert("age can't be negative")
+                return
+            }
+
+            var phnumber = /[0-9]{10}/
+            if (!phnumber.test(phone.value)) {
+                alert("Phone Number can only consist of 10 digits")
+                return
+            }
+            var psword = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
+            if (!psword.test(pass.value)) {
+                alert("Password Criteria not met")
+                alert("Please include atleast 1 Uppercase Char, 1 Lowercase Char, 1 Number, 1 Special Character and minimum length should be 8 characters.")
+                return
+            }
+
+
+            document.cookie ="Username = " +uname.value;
+            document.cookie ="Email =  " +email.value
+
+            localStorage.setItem("Email", email.value);
+            localStorage.setItem("Username",phone.value);
+
+            alert("Registered Successfully")
+            window.open("dom.html")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Christ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="index.xsd">
+<ComputerScience>
+    <Student_name>Adi Singh</Student_name>
+    <Student_university>Christ university</Student_university>
+    <Student_phone>5687457889</Student_phone>
+    <Student_email>adi@gmail.com</Student_email>
+</ComputerScience>
+<ComputerScience>
+    <Student_name>Ruben verma</Student_name>
+    <Student_university>VIT university</Student_university>
+    <Student_phone>5687457834</Student_phone>
+    <Student_email>rubi@gmail.com</Student_email>
+</ComputerScience>
+  
+  <ComputerScience>
+    <Student_name>bhanu Singh</Student_name>
+    <Student_university>IIT university</Student_university>
+    <Student_phone>8287457459</Student_phone>
+    <Student_email>bhanu@gmail.com</Student_email>
+</ComputerScience>
+
+</Christ>
